@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrielle | Alfaiataria</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f7f4;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #c6a77b;
+        }
+
+        .inicio {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            background:
+                linear-gradient(#0008, #0008),
+                url("https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+        }
+
+        .inicio h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #b99a72;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .botao:hover {
+            background: #92734e;
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 35px;
+        }
+
+        .sobre {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .sobre img {
+            width: 100%;
+            max-width: 450px;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .sobre-texto {
+            flex: 1;
+            min-width: 250px;
+            line-height: 1.8;
+        }
+
+        .processos {
+            background: #eeeae3;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding-bottom: 22px;
+            text-align: center;
+            box-shadow: 0 3px 12px #00000012;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card h3 {
+            margin: 18px 10px 10px;
+            font-family: Georgia, serif;
+        }
+
+        .card p {
+            padding: 0 18px;
+            line-height: 1.6;
+        }
+
+        .precos {
+            text-align: center;
+        }
+
+        .preco {
+            background: white;
+            padding: 30px 20px;
+            border: 1px solid #ddd;
+        }
+
+        .preco h3 {
+            font-family: Georgia, serif;
+            margin-bottom: 15px;
+        }
+
+        .valor {
+            color: #a17c4e;
+            font-size: 25px;
+            margin: 15px 0;
+        }
+
+        .contato {
+            background: #171717;
+            color: white;
+        }
+
+        .contato form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea, select {
+            padding: 14px;
+            border: none;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        footer {
+            background: #080808;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+        .voltar {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #b99a72;
+            color: white;
+            border: none;
+            padding: 13px 16px;
+            cursor: pointer;
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .inicio h2 {
+                font-size: 34px;
+            }
+
+            .sobre {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GABRIELLE</h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#processos">Processos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#precos">Preços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="inicio" id="inicio">
+        <div>
+            <h2>Elegância em cada detalhe</h2>
+            <p>Alfaiataria feita com cuidado, qualidade e personalidade.</p>
+            <a href="#servicos" class="botao">Conheça nossos serviços</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2 class="titulo">Sobre o Ateliê</h2>
+
+        <div class="sobre">
+            <img
+                src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=900&q=80"
+                alt="Ateliê de costura"
+                loading="lazy">
+
+            <div class="sobre-texto">
+                <h2>Gabrielle Alfaiataria</h2>
+
+                <p>
+                    Nosso ateliê tem como objetivo transformar tecidos
+                    em peças únicas, valorizando a personalidade e o
+                    estilo de cada pessoa.
+                </p>
+
+                <p>
+                    Trabalhamos com dedicação, criatividade e atenção
+                    aos detalhes, buscando oferecer qualidade e conforto
+                    em cada criação.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="processos" id="processos">
+        <h2 class="titulo">Como funciona nosso trabalho</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img
+                    src="https://images.pexels.com/photos/4210854/pexels-photo-4210854.jpeg"
+                    alt="Máquina de costura e confecção"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=800&q=80';">
+
+                <h3>Confecção</h3>
+                <p>
+                    Produção de peças com cuidado, criatividade
+                    e atenção aos detalhes.
+                </p>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.pexels.com/photos/3738089/pexels-photo-3738089.jpeg"
+                    alt="Trabalho de costura e medidas"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80';">
+
+                <h3>Medidas</h3>
+                <p>
+                    Realizamos as medidas necessárias para
+                    desenvolver roupas personalizadas.
+                </p>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
+                    alt="Prova de roupas e escolha de peças"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80';">
+
+                <h3>Prova e ajustes</h3>
+                <p>
+                    Conferimos o caimento e realizamos os
+                    ajustes necessários para cada peça.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2 class="titulo">Nossos Serviços</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80"
+                    alt="Roupas elegantes">
+
+                <h3>Roupas sob medida</h3>
+                <p>
+                    Peças desenvolvidas de acordo com suas
+                    medidas e preferências.
+                </p>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80"
+                    alt="Peças de vestuário">
+
+                <h3>Ajustes</h3>
+                <p>
+                    Reparos e alterações para melhorar
+                    o caimento das roupas.
+                </p>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=800&q=80"
+                    alt="Detalhes de costura">
+
+                <h3>Alfaiataria personalizada</h3>
+                <p>
+                    Criações exclusivas com acabamento cuidadoso.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="precos" id="precos">
+        <h2 class="titulo">Tabela de Preços</h2>
+
+        <div class="cards">
+
+            <div class="preco">
+                <h3>Ajustes</h3>
+                <p>Pequenas alterações e reparos.</p>
+                <p class="valor">A partir de R$ 180</p>
+            </div>
+
+            <div class="preco">
+                <h3>Sob medida</h3>
+                <p>Criação personalizada.</p>
+                <p class="valor">A partir de R$ 650</p>
+            </div>
+
+            <div class="preco">
+                <h3>Alfaiataria Premium</h3>
+                <p>Peças exclusivas e acabamento especial.</p>
+                <p class="valor">A partir de R$ 1.200</p>
+            </div>
+
+        </div>
+
+        <p style="margin-top:20px;">
+            *Valores ilustrativos. O preço final depende da peça e dos materiais.
+        </p>
+    </section>
+
+    <section class="contato" id="contato">
+        <h2 class="titulo">Entre em contato</h2>
+
+        <form id="formulario">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Seu nome"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Seu e-mail"
+                required>
+
+            <select id="servico" required>
+                <option value="">Escolha um serviço</option>
+                <option>Roupas sob medida</option>
+                <option>Ajustes</option>
+                <option>Alfaiataria personalizada</option>
+            </select>
+
+            <textarea
+                id="mensagem"
+                placeholder="Escreva sua mensagem..."
+                required></textarea>
+
+            <button type="submit" class="botao">
+                Preparar mensagem
+            </button>
+
+        </form>
+
+        <p id="retorno" style="text-align:center; margin-top:20px;"></p>
+    </section>
+
+    <footer>
+        <p>Gabrielle Alfaiataria</p>
+        <p>Elegância, qualidade e personalidade.</p>
+        <p>© 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+    <button class="voltar" id="voltar" onclick="irParaInicio()">
+        ↑
+    </button>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const retorno = document.getElementById("retorno");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const servico = document.getElementById("servico").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            const texto =
+                "Olá! Meu nome é " + nome +
+                ". Meu e-mail é " + email +
+                ". Tenho interesse em: " + servico +
+                ". Mensagem: " + mensagem;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(texto)
+                    .then(function() {
+                        retorno.textContent =
+                            "Mensagem copiada! Você já pode enviá-la.";
+                    })
+                    .catch(function() {
+                        retorno.textContent =
+                            "Não foi possível copiar automaticamente. " + texto;
+                    });
+            } else {
+                retorno.textContent =
+                    "Copie esta mensagem para enviar: " + texto;
+            }
+        });
+
+        window.addEventListener("scroll", function() {
+            const botao = document.getElementById("voltar");
+
+            if (window.scrollY > 300) {
+                botao.style.display = "block";
+            } else {
+                botao.style.display = "none";
+            }
+        });
+
+        function irParaInicio() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+</body>
+</html>
